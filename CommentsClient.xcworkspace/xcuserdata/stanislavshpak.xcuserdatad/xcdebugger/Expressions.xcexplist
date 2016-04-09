@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[AccountsViewController tableView:cellForRowAtIndexPath:]:AccountsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[CurrentUser currentUser].userID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController contextDidSave:]:ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__41-[CommentsViewController contextDidSave:]_block_invoke_2:CommentsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "notification">
+            </PersistentString>
+            <PersistentString
+               value = "[_pullRequest managedObjectContext]">
+            </PersistentString>
+            <PersistentString
+               value = "[NSManagedObjectContext MR_rootSavingContext]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController actionLogin:]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PullRequest createdAtString]:PullRequest.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.createdAt">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__44+[Label getLabelsForPullRequest:completion:]_block_invoke_2:Label.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PRCell setupPullRequest:]:PRCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pullRequest">
+            </PersistentString>
+            <PersistentString
+               value = "pullRequest.user.userID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__41-[CommentsViewController contextDidSave:]_block_invoke:CommentsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.fetchedResultsController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

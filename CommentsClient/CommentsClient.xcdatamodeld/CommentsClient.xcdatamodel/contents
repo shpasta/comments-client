@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="body"/>
+            </userInfo>
+        </attribute>
+        <attribute name="commentID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ssZ"/>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="url"/>
+            </userInfo>
+        </attribute>
+        <relationship name="pullRequest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PullRequest" inverseName="comment" inverseEntity="PullRequest" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="issue_url"/>
+                <entry key="relatedByAttribute" value="issueUrl"/>
+            </userInfo>
+        </relationship>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="comment" inverseEntity="User" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="user"/>
+                <entry key="relatedByAttribute" value="userID"/>
+            </userInfo>
+        </relationship>
+    </entity>
+    <entity name="Label" representedClassName="Label" syncable="YES">
+        <attribute name="labelID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pullRequest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PullRequest" inverseName="label" inverseEntity="PullRequest" syncable="YES"/>
+    </entity>
+    <entity name="PullRequest" representedClassName="PullRequest" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="yyyy-MM-dd'T'HH:mm:ssZ"/>
+                <entry key="mappedKeyName" value="created_at"/>
+            </userInfo>
+        </attribute>
+        <attribute name="issueUrl" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="issue_url"/>
+            </userInfo>
+        </attribute>
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="number"/>
+            </userInfo>
+        </attribute>
+        <attribute name="pullRequestID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="title"/>
+            </userInfo>
+        </attribute>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="url"/>
+            </userInfo>
+        </attribute>
+        <relationship name="comment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="pullRequest" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="label" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Label" inverseName="pullRequest" inverseEntity="Label" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="pullRequest" inverseEntity="User" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="user"/>
+                <entry key="relatedByAttribute" value="userID"/>
+            </userInfo>
+        </relationship>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="login" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="login"/>
+            </userInfo>
+        </attribute>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <relationship name="comment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="user" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="pullRequest" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PullRequest" inverseName="user" inverseEntity="PullRequest" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Comment" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="PullRequest" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="User" positionX="-36" positionY="63" width="128" height="105"/>
+        <element name="Label" positionX="-54" positionY="63" width="128" height="105"/>
+    </elements>
+</model>
